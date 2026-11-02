@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>A Glória Eterna — V1.5</title>
+<title>A Glória Eterna — V1.6</title>
 <style>
 :root{--bg:#07111f;--panel:#101e31;--panel2:#15263c;--line:#29415e;--gold:#f5c451;--green:#35c58a;--muted:#9db0c7;--white:#f5f7fb;--red:#ff7373}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#1b3552 0,#07111f 48%);color:var(--white);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
@@ -16,11 +16,57 @@ main{max-width:1180px;margin:22px auto;padding:0 14px 60px}.hero{display:flex;ju
 .players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.player{background:linear-gradient(135deg,#10243a,#0a1727);border:1px solid #29415e;border-radius:12px;padding:10px;display:flex;justify-content:space-between;gap:8px;align-items:center}.player b{display:block}.player small{color:var(--muted)}.player.active{border-color:var(--gold);box-shadow:0 0 0 2px #f5c45130;transform:translateY(-1px)}.player.unavailable{opacity:.38;filter:grayscale(.8);border-style:dashed}.player.unavailable button{background:#293747;color:#9aabba}.player small.status{display:block;color:var(--gold);font-size:10px;margin-top:3px}.ovr{color:var(--gold);font-weight:900;font-size:18px}.btn,button,select,input{font:inherit}.btn{border:0;border-radius:10px;padding:10px 13px;background:var(--gold);color:#172033;font-weight:800;cursor:pointer}.btn.secondary{background:#213953;color:#e8f1fc;border:1px solid #385775}.btn:disabled{opacity:.4;cursor:not-allowed}input,select{background:#081727;color:#fff;border:1px solid #35516e;border-radius:9px;padding:10px;max-width:100%}label{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}.chem{display:flex;align-items:center;gap:10px}.bar{height:9px;background:#263b50;border-radius:99px;overflow:hidden;flex:1}.bar i{display:block;height:100%;background:linear-gradient(90deg,#35c58a,#f5c451);width:0}.hidden{display:none!important}.round{color:var(--gold);font-weight:800}.notice{padding:12px 14px;border-radius:10px;background:#1b2c40;color:#dce9f7;margin:10px 0}.good{color:var(--green)}.goal{color:var(--gold);font-weight:900}.pulse{animation:pulse .65s ease}@keyframes pulse{50%{transform:scale(1.035);box-shadow:0 0 0 5px #f5c45122}}.match-event{padding:7px 0;border-bottom:1px solid #ffffff14}.match-event:last-child{border:0}.minute{display:inline-block;min-width:42px;color:var(--gold);font-weight:900}.match-event.goal{background:linear-gradient(90deg,#f5c45122,#f5c45108);padding:12px;border:1px solid #f5c45155;border-radius:10px;margin:7px 0;animation:pulse .65s ease}.live-clock{font-variant-numeric:tabular-nums}.table tr.user-row{background:#f5c45114}.table tr.eliminated{opacity:.65}.award-card{margin-top:12px;padding:16px;border:1px solid var(--gold);border-radius:14px;background:linear-gradient(135deg,#483814,#182b40);box-shadow:0 0 28px #f5c45120}.award-card .crown{font-size:36px}.champion-glow{border:1px solid var(--gold);background:linear-gradient(135deg,#423315,#14263c)}.warn{color:var(--gold)}.table{width:100%;border-collapse:collapse;font-size:13px}.table td,.table th{padding:8px;border-bottom:1px solid #263c54;text-align:left}.table th{color:var(--muted);font-weight:600}.footer{color:#8196ae;font-size:11px;margin-top:16px}
 @media(max-width:850px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.pitch{max-height:none}.slot{width:58px;min-height:43px;font-size:9px}.slot strong{font-size:10px}.players{grid-template-columns:1fr 1fr}}
 @media(max-width:430px){main{padding:0 9px 40px}.panel{padding:12px}.players{grid-template-columns:1fr}.slot{width:51px;min-height:39px;padding:2px}.slot em{max-width:48px}.hero{align-items:start;flex-direction:column}}
+
+/* V1.6 — draft refinado */
+.draft-top{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 16px;margin-bottom:12px;border:1px solid #385574;border-radius:15px;background:linear-gradient(115deg,#1b3552,#102237 62%,#152d43)}
+.eyebrow{font-size:10px;letter-spacing:1.7px;color:var(--gold);font-weight:900;margin-bottom:3px}
+.draft-top h2{margin:0;font-size:clamp(20px,3vw,27px)}
+.draft-sub{color:#b3c5d9;font-size:12px;margin:5px 0 0}
+.draft-badge{min-width:118px;text-align:center;padding:9px 12px;border-radius:12px;background:#081727;border:1px solid #49627d}
+.draft-badge span{display:block;font-size:21px}.draft-badge b{display:block;color:var(--gold);font-size:12px}.draft-badge small{display:block;color:var(--muted);font-size:10px}
+.player-list-head{display:flex;align-items:center;justify-content:space-between;margin:14px 2px 9px;gap:8px}
+.player-list-head b{display:block}.player-list-head small{display:block;color:var(--muted);font-size:11px}
+.players{gap:10px}
+.player{position:relative;min-height:83px;padding:11px 12px;border-radius:14px;transition:transform .16s,border-color .16s,box-shadow .16s;background:linear-gradient(135deg,#142b43,#0b1b2d)}
+.player:not(.unavailable){cursor:pointer}
+.player:not(.unavailable):active{transform:scale(.985)}
+.player.active{border-color:var(--gold);box-shadow:0 0 0 2px #f5c45135,0 8px 18px #0003;background:linear-gradient(135deg,#3a321d,#14273b)}
+.player.unavailable{opacity:.34;filter:grayscale(.9)}
+.player .pos-pills{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
+.player .pos-pill{font-size:9px;line-height:1;padding:4px 6px;border-radius:6px;background:#203c57;color:#c8d8e8;border:1px solid #395a78}
+.player .pos-pill.primary{background:#5b491d;color:#ffe39b;border-color:#9b7a31}
+.player .status{font-size:10px!important}
+.player .pick{border-radius:8px;padding:6px 8px;font-size:10px}
+.player.active .pick{background:var(--gold);color:#172033}
+#message{border-left:3px solid var(--gold);background:linear-gradient(90deg,#493a1a55,#1b2c40);font-weight:600}
+.pitch{background:repeating-linear-gradient(0deg,#12573e 0,#12573e 9.8%,#176a49 10%,#176a49 19.8%)}
+.pitch:after{border-color:#efffe0dd}
+.slot{backdrop-filter:blur(3px);box-shadow:0 4px 10px #001a}
+.slot.selected{background:#6b531c;border:2px solid #ffe08a;box-shadow:0 0 0 4px #f5c45133,0 0 20px #f5c45155}
+.slot.filled{background:linear-gradient(145deg,#0c4535,#082d27);border:1px solid #65e3aa}
+.group-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.group-card{background:#0b1a2a;border:1px solid #2d4763;border-radius:13px;padding:12px;min-width:0}
+.group-card h4{margin:0 0 7px;color:var(--gold);letter-spacing:1px}
+.group-card .table{font-size:11px}
+.group-card .table td,.group-card .table th{padding:6px 4px}
+.group-card .qualified{color:var(--green);font-weight:900}
+.group-card .user-row{background:#f5c45115}
+.round-results{display:grid;gap:7px}
+.round-result{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:9px 11px;background:#0b1a2a;border:1px solid #2b4561;border-radius:9px;font-size:12px}
+.round-result b{color:var(--gold);white-space:nowrap}
+.bracket-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:stretch}
+.bracket-round{background:#0a1828;border:1px solid #29415e;border-radius:12px;padding:10px;min-width:0}
+.bracket-round h4{color:var(--gold);margin:0 0 9px;font-size:12px}
+.bracket-match{padding:8px;margin:7px 0;background:#14283d;border-radius:8px;border:1px solid #29415e;font-size:11px}
+.bracket-match .winner{color:var(--green);font-weight:900}
+.bracket-match .score{color:var(--gold);font-weight:900;float:right}
+@media(max-width:620px){.draft-top{align-items:flex-start}.draft-badge{min-width:95px;padding:7px}.group-grid{grid-template-columns:1fr}.bracket-grid{grid-template-columns:1fr}.players{grid-template-columns:1fr}}
+
 </style></head>
 <body>
-<header><div class="brand">⚽ A GLÓRIA <span>ETERNA</span></div><div class="row"><span class="tag">VERSÃO 1.5 · DRAFT + TRANSMISSÃO AUTOMÁTICA</span><span class="muted" id="phase">PRÉ-TEMPORADA</span></div></header>
+<header><div class="brand">⚽ A GLÓRIA <span>ETERNA</span></div><div class="row"><span class="tag">VERSÃO 1.6 · COPA EM GRUPOS + MATA-MATA</span><span class="muted" id="phase">PRÉ-TEMPORADA</span></div></header>
 <main>
-<div class="hero"><div><h1>Monte seu time.<br><span style="color:var(--gold)">Conquiste a América.</span></h1><p>Draft histórico: escolha um jogador por clube. Jogadores incompatíveis com as vagas ficam bloqueados; a próxima equipe é sorteada automaticamente.</p></div><button class="btn secondary" onclick="resetGame()">↻ Reiniciar</button></div>
+<div class="hero"><div><h1>Monte seu time.<br><span style="color:var(--gold)">Conquiste a América.</span></h1><p>Draft histórico com funções específicas por campanha. Escolha um atleta por clube e monte seu onze ideal.</p></div><button class="btn secondary" onclick="resetGame()">↻ Reiniciar</button></div>
 <section class="panel" id="setup">
 <h2>Crie seu clube</h2><div class="formrow"><div><label>Nome do time</label><input id="teamName" value="Baixada FC" maxlength="24"></div><div><label>Formação</label><select id="formation"></select></div><div><label>Estilo de jogo</label><select id="style"><option>Pressão alta</option><option>Posse de bola</option><option>Contra-ataque</option><option>Defesa sólida</option><option>Jogo pelas laterais</option></select></div></div>
 <button class="btn" onclick="startDraft()">Sortear primeira equipe e iniciar draft</button>
@@ -28,10 +74,10 @@ main{max-width:1180px;margin:22px auto;padding:0 14px 60px}.hero{display:flex;ju
 <div id="game" class="hidden">
 <div class="stats"><div class="stat"><small>JOGADORES</small><b id="count">0/11</b></div><div class="stat"><small>OVERALL MÉDIO</small><b id="avg">—</b></div><div class="stat"><small>FORÇA DO ELENCO</small><b id="power">—</b></div><div class="stat"><small>RODADA</small><b id="round">0/11</b></div></div>
 <div class="grid">
-<section class="panel"><div class="row" style="justify-content:space-between"><h2 id="clubTitle">Equipe sorteada</h2><span class="round" id="campaign"></span></div><div class="field-wrap"><div class="pitch" id="pitch"><div class="boxline top"></div><div class="boxline bottom"></div></div></div><div class="row" style="justify-content:space-between;margin:12px 0"><b>Jogadores disponíveis</b><span class="muted" id="clubProgress"></span></div><div class="players" id="players"></div><div class="notice" id="message">Escolha um jogador habilitado e depois toque em uma das posições destacadas no campo.</div><p class="footer">Critério de posição: posição principal da campanha; função secundária somente quando documentada para aquele clube e temporada. Ex.: <a href="https://www.transfermarkt.com.br/juan-roman-riquelme/profil/spieler/3854" target="_blank" rel="noopener">Riquelme</a> como meia ofensivo e <a href="https://www.terra.com.br/esportes/lance/gabigol-nao-se-incomoda-com-troca-de-posicoes-no-fla-e-uma-coisa-boa,3e159208791802b8a3c334a06368802dz3kpzy0l.html" target="_blank" rel="noopener">Gabigol no Flamengo 2019</a> também aberto pela direita.</p></section>
+<section class="panel"><div class="draft-top"><div><div class="eyebrow">CAMPANHA SORTEADA</div><div class="row" style="justify-content:space-between;align-items:center"><h2 id="clubTitle">Equipe sorteada</h2><span class="round" id="campaign"></span></div><p class="draft-sub">Escolha somente um atleta desta campanha. As funções disponíveis são mostradas em cada cartão.</p></div><div class="draft-badge"><span>⚽</span><b id="clubProgress">Campanha 1</b><small>1 jogador por clube</small></div></div><div class="field-wrap"><div class="pitch" id="pitch"><div class="boxline top"></div><div class="boxline bottom"></div></div></div><div class="player-list-head"><div><b>Jogadores da campanha</b><small>Toque em um cartão disponível para selecionar</small></div><span class="muted" id="eligibleCount"></span></div><div class="players" id="players"></div><div class="notice" id="message">Escolha um jogador habilitado e depois toque em uma das posições destacadas no campo.</div><p class="footer">Critério de posição: posição principal da campanha; função secundária somente quando documentada para aquele clube e temporada. Ex.: <a href="https://www.transfermarkt.com.br/juan-roman-riquelme/profil/spieler/3854" target="_blank" rel="noopener">Riquelme</a> como meia ofensivo e <a href="https://www.terra.com.br/esportes/lance/gabigol-nao-se-incomoda-com-troca-de-posicoes-no-fla-e-uma-coisa-boa,3e159208791802b8a3c334a06368802dz3kpzy0l.html" target="_blank" rel="noopener">Gabigol no Flamengo 2019</a> também aberto pela direita.</p></section>
 <aside class="panel"><h2>Seu elenco</h2><div class="notice">Complete as 11 posições. Jogadores incompatíveis com as vagas restantes ficam bloqueados.</div><div id="roster"></div><div class="notice" id="draftHint">A cada escolha, uma nova campanha será sorteada automaticamente. Posições secundárias só são liberadas quando documentadas.</div></aside>
 </div></div>
-<section class="panel hidden" id="tournament" style="margin-top:18px"><div class="row" style="justify-content:space-between"><div><span class="tag">FASE ELIMINATÓRIA</span><h2 style="margin:10px 0 2px">A Glória Eterna</h2><p class="muted" id="tournamentSub">Seu elenco está pronto. A América espera.</p></div><div class="stat"><small>FASE</small><b id="tournamentRound">Oitavas</b></div></div><div class="stats" id="tournamentStats"><div class="stat"><small>SEU TIME</small><b id="userPower">—</b></div><div class="stat"><small>ADVERSÁRIO</small><b id="opponentPower">—</b></div><div class="stat"><small>PLACAR</small><b id="score">—</b></div><div class="stat"><small>SITUAÇÃO</small><b id="matchStatus">Aguardando</b></div></div><div class="field-wrap" style="margin:14px 0"><div class="row" style="justify-content:space-around;align-items:center;text-align:center"><div><div style="font-size:34px">🛡️</div><b id="homeName">Seu time</b></div><div style="font-size:25px;color:var(--gold);font-weight:900" id="scoreBig">VS</div><div><div style="font-size:34px">🏆</div><b id="awayName">Adversário</b></div></div></div><h3>Transmissão ao vivo</h3><div id="matchFeed" class="notice" style="min-height:100px">O sorteio das oitavas está pronto.</div><div class="row" style="align-items:end;margin:12px 0"><div><label for="matchSpeed">Velocidade do relógio</label><select id="matchSpeed" onchange="changeMatchSpeed()"><option value="1">1x · realista</option><option value="2" selected>2x · normal</option><option value="4">4x · rápido</option><option value="8">8x · muito rápido</option></select></div><div class="stat"><small>RELÓGIO</small><b id="matchClock">00′</b></div><div style="flex:1;min-width:100px"><small class="muted">TEMPO DE JOGO</small><div class="bar" style="height:12px;margin-top:7px"><i id="clockProgress" style="width:0%"></i></div></div></div><div class="row"><button class="btn" id="simulateBtn" onclick="startAutoMatch()">▶ Iniciar partida</button><button class="btn secondary hidden" id="nextRoundBtn" onclick="advanceRound()">Próxima fase →</button></div><div id="standingsPanel" class="hidden" style="margin-top:18px"><h3>Classificação do torneio</h3><div id="standingsTable"></div></div><div id="trajectory" class="hidden" style="margin-top:18px"></div><div id="champion" class="hidden notice" style="margin-top:16px;text-align:center;font-size:20px"></div></section>
+<section class="panel hidden" id="tournament" style="margin-top:18px"><div class="row" style="justify-content:space-between"><div><span class="tag" id="stageTag">FASE DE GRUPOS</span><h2 style="margin:10px 0 2px">A Glória Eterna</h2><p class="muted" id="tournamentSub">16 equipes, fase de grupos e mata-mata.</p></div><div class="stat"><small>FASE</small><b id="tournamentRound">Oitavas</b></div></div><div class="stats" id="tournamentStats"><div class="stat"><small>SEU TIME</small><b id="userPower">—</b></div><div class="stat"><small>ADVERSÁRIO</small><b id="opponentPower">—</b></div><div class="stat"><small>PLACAR</small><b id="score">—</b></div><div class="stat"><small>SITUAÇÃO</small><b id="matchStatus">Aguardando</b></div></div><div class="field-wrap" style="margin:14px 0"><div class="row" style="justify-content:space-around;align-items:center;text-align:center"><div><div style="font-size:34px">🛡️</div><b id="homeName">Seu time</b></div><div style="font-size:25px;color:var(--gold);font-weight:900" id="scoreBig">VS</div><div><div style="font-size:34px">🏆</div><b id="awayName">Adversário</b></div></div></div><h3>Transmissão ao vivo</h3><div id="matchFeed" class="notice" style="min-height:100px">O sorteio das oitavas está pronto.</div><div class="row" style="align-items:end;margin:12px 0"><div><label for="matchSpeed">Velocidade do relógio</label><select id="matchSpeed" onchange="changeMatchSpeed()"><option value="1">1x · realista</option><option value="2" selected>2x · normal</option><option value="4">4x · rápido</option><option value="8">8x · muito rápido</option></select></div><div class="stat"><small>RELÓGIO</small><b id="matchClock">00′</b></div><div style="flex:1;min-width:100px"><small class="muted">TEMPO DE JOGO</small><div class="bar" style="height:12px;margin-top:7px"><i id="clockProgress" style="width:0%"></i></div></div></div><div class="row"><button class="btn" id="simulateBtn" onclick="startAutoMatch()">▶ Iniciar partida</button><button class="btn secondary hidden" id="nextRoundBtn" onclick="advanceRound()">Próxima fase →</button></div><div id="standingsPanel" class="hidden" style="margin-top:18px"><h3>Classificação dos grupos</h3><div id="standingsTable"></div></div><div id="roundResults" class="hidden" style="margin-top:18px"></div><div id="bracketPanel" class="hidden" style="margin-top:18px"><h3>Chaveamento do mata-mata</h3><div id="bracket"></div></div><div id="trajectory" class="hidden" style="margin-top:18px"></div><div id="champion" class="hidden notice" style="margin-top:16px;text-align:center;font-size:20px"></div></section>
 </main>
 <script>
 const DB=[
@@ -94,6 +140,51 @@ const formations={
 "5-3-2":[["CA",38,19],["CA",62,19],["MC",30,48],["MEI",50,43],["MC",70,48],["LE",10,60],["ZAG",32,79],["ZAG",50,83],["ZAG",68,79],["LD",90,60],["GOL",50,93]],
 "4-2-2-2":[["CA",38,18],["CA",62,18],["MEI",32,40],["MEI",68,40],["VOL",38,57],["VOL",62,57],["LE",14,76],["ZAG",38,82],["ZAG",62,82],["LD",86,76],["GOL",50,93]]
 };
+
+// Posições secundárias conservadoras, associadas à campanha (não à carreira inteira).
+// A lista é intencionalmente curta: só libera funções coerentes com o papel exercido naquele contexto.
+const CAMPAIGN_ROLES={
+ "Santos|2011|Neymar":["PD","MEI"],
+ "Santos|2011|Paulo Henrique Ganso":["MC"],
+ "Santos|2011|Elano":["MEI"],
+ "Santos|2011|Danilo":["MC"],
+ "Flamengo|2019|Gerson":["VOL","MEI"],
+ "Flamengo|2019|Everton Ribeiro":["PD","MC"],
+ "Flamengo|2019|Arrascaeta":["MC","PE"],
+ "Flamengo|2019|Bruno Henrique":["CA"],
+ "Flamengo|2019|Gabriel Barbosa":["PD"],
+ "Flamengo|2019|Filipe Luís":["VOL"],
+ "River Plate|2018|Enzo Pérez":["VOL"],
+ "River Plate|2018|Exequiel Palacios":["VOL","MEI"],
+ "River Plate|2018|Gonzalo Martínez":["PE"],
+ "River Plate|2018|Ignacio Fernández":["MC"],
+ "Boca Juniors|2007|Juan Román Riquelme":["MC"],
+ "Boca Juniors|2007|Neri Cardozo":["PE","PD"],
+ "Atlético Nacional|2016|Macnelly Torres":["MC"],
+ "Atlético Nacional|2016|Orlando Berrío":["PE","CA"],
+ "Independiente del Valle|2016|Junior Sornoza":["MC"],
+ "Independiente del Valle|2016|Jefferson Orejuela":["VOL"],
+ "Palmeiras|2020|Zé Rafael":["VOL"],
+ "Palmeiras|2020|Raphael Veiga":["MC"],
+ "Palmeiras|2020|Gustavo Scarpa":["PE","MC"],
+ "Palmeiras|2020|Rony":["CA","PD"],
+ "Cerro Porteño|2011|Iván Torres":["PE","LE"],
+ "Deportivo Cali|1999|Gerardo Bedoya":["VOL"],
+ "Deportivo Cali|1999|David Ferreira":["MEI","MC"],
+ "São Paulo|2005|Cicinho":["PE"],
+ "São Paulo|2005|Mineiro":["MC"],
+ "Corinthians|2012|Danilo":["MEI"],
+ "Corinthians|2012|Jorge Henrique":["PE","PD"],
+ "Cruzeiro|2003|Alex":["MC"],
+ "Cruzeiro|2003|Deivid":["CA"],
+ "Fluminense|2012|Jean":["VOL","LD"],
+ "Fluminense|2012|Thiago Neves":["MC"],
+ "Botafogo|2024|Marlon Freitas":["VOL"],
+ "Botafogo|2024|Thiago Almada":["MC","PE"],
+ "Botafogo|2024|Luiz Henrique":["PD"],
+ "Athletico Paranaense|2001|Kléberson":["VOL","MC"]
+};
+
 let state={team:"Baixada FC",formation:"4-3-3",style:"Pressão alta",speed:"2",roster:[],used:[],club:null,selected:null,round:0,tournament:null};
 const $=id=>document.getElementById(id);
 function init(){$("formation").innerHTML=Object.keys(formations).map(f=>`<option>${f}</option>`).join("");}
@@ -101,24 +192,225 @@ function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
 function startDraft(){state.team=$("teamName").value.trim()||"Meu Clube";state.formation=$("formation").value;state.style=$("style").value;state.speed="2";state.roster=[];state.used=[];state.round=0;$("setup").classList.add("hidden");$("game").classList.remove("hidden");$("phase").textContent="DRAFT HISTÓRICO";drawClub();render();}
 function drawClub(){const open=slots().map((s,i)=>({s,i})).filter(x=>!state.roster.some(r=>r.slot===x.i));let choices=shuffle(DB.filter(c=>!state.used.includes(c.club)&&c.players.some(p=>open.some(x=>compatible(p,x.s[0])))));if(!choices.length){$("message").textContent="Não há outra campanha disponível com jogador para as posições restantes. Reinicie ou escolha outra formação.";return;}state.club=choices[0];state.used.push(state.club.club);state.round++;state.selected=null;$("clubTitle").textContent=state.club.club;$("campaign").textContent=state.club.year+" · "+state.club.country;$("clubProgress").textContent="Campanha "+state.round+" · 1 jogador por clube";renderPlayers();render();}
 function possiblePositions(p){
-// Posição principal da campanha. Segundas posições só entram quando há registro histórico específico.
-const extra=[];
-// Gabigol também foi usado aberto pela direita no Flamengo de 2019; não generalizar para outras temporadas.
-if(p.name==="Gabriel Barbosa" && state.club?.club==="Flamengo" && state.club?.year==="2019") extra.push("PD");
-return [...new Set([p.pos,...extra])];
+ const key=`${state.club?.club}|${state.club?.year}|${p.name}`;
+ return [...new Set([p.pos,...(CAMPAIGN_ROLES[key]||[])])];
 }
 function compatible(p,slot){return possiblePositions(p).includes(slot);}
 function slots(){return formations[state.formation];}
 function openSlotsFor(p){return slots().map((s,i)=>({s,i})).filter(x=>!state.roster.some(r=>r.slot===x.i)&&compatible(p,x.s[0]));}
 function renderPitch(){let pitch=$("pitch");pitch.querySelectorAll(".slot").forEach(x=>x.remove());slots().forEach((s,i)=>{let p=state.roster.find(x=>x.slot===i),el=document.createElement("button");el.className="slot "+(p?"filled ":"")+(state.selected!==null&&!p&&compatible(state.club.players[state.selected],s[0])?"selected":"");el.style.left=s[1]+"%";el.style.top=s[2]+"%";el.innerHTML=p?`<strong>${p.ovr}</strong><em>${p.name}</em><small>${s[0]}</small>`:`<strong>${s[0]}</strong><small>VAGA</small>`;el.disabled=!!p;el.onclick=()=>assign(i);pitch.appendChild(el);});}
-function renderPlayers(){let box=$("players");box.innerHTML="";let open=slots().map((s,i)=>({s,i})).filter(x=>!state.roster.some(r=>r.slot===x.i));let needed=[...new Set(open.map(x=>x.s[0]))];$("message").textContent=needed.length?`Posições ainda necessárias: ${needed.join(", ")}. Jogadores sem posição compatível estão bloqueados.`:"Elenco completo!";state.club.players.forEach((p,i)=>{let already=state.roster.some(x=>x.name===p.name),available=openSlotsFor(p).length>0,disabled=already||!available;let div=document.createElement("div");div.className="player "+(disabled?"unavailable":"")+(state.selected===i?" active":"");let pos=possiblePositions(p).join(" / ");div.innerHTML=`<div style="min-width:0"><b>${p.name}</b><small>${pos} · ${p.nat}</small><small class="status">${already?"Já escolhido":available?"Disponível":"Não atende às vagas restantes"}</small></div><div style="text-align:right;flex-shrink:0"><span class="ovr">${p.ovr}</span><br><button class="btn secondary" style="padding:5px 8px;font-size:11px" ${disabled?"disabled":""}>Escolher</button></div>`;div.querySelector("button").onclick=()=>{state.selected=i;$("message").textContent=`${p.name} selecionado. Agora toque em uma das posições destacadas no campo.`;renderPlayers();renderPitch();};box.appendChild(div);});}
+function renderPlayers(){
+ let box=$("players");box.innerHTML="";
+ let open=slots().map((s,i)=>({s,i})).filter(x=>!state.roster.some(r=>r.slot===x.i));
+ let needed=[...new Set(open.map(x=>x.s[0]))];
+ $("message").textContent=needed.length?`Ainda faltam: ${needed.join(" · ")}. Cartões apagados não podem ocupar nenhuma vaga restante.`:"Elenco completo!";
+ let eligible=0;
+ state.club.players.forEach((p,i)=>{
+  let already=state.roster.some(x=>x.name===p.name),available=openSlotsFor(p).length>0,disabled=already||!available;
+  if(!disabled)eligible++;
+  let div=document.createElement("div");
+  div.className="player "+(disabled?"unavailable ":"")+(state.selected===i?"active":"");
+  const roles=possiblePositions(p);
+  div.innerHTML=`<div style="min-width:0;flex:1"><b>${p.name}</b><div class="pos-pills">${roles.map((r,j)=>`<span class="pos-pill ${j===0?'primary':''}">${r}</span>`).join("")}</div><small class="status">${already?"Já escolhido":available?`Pode atuar em: ${openSlotsFor(p).map(x=>x.s[0]).filter((v,j,a)=>a.indexOf(v)===j).join(" / ")}`:"Sem posição compatível com as vagas restantes"}</small></div><div style="text-align:right;flex-shrink:0"><span class="ovr">${p.ovr}</span><br><button class="btn secondary pick" ${disabled?"disabled":""}>${state.selected===i?"Selecionado":"Selecionar"}</button></div>`;
+  if(!disabled){
+   const select=()=>{state.selected=i;$("message").textContent=`${p.name} selecionado. Agora escolha uma das posições destacadas no campo.`;renderPlayers();renderPitch();};
+   div.addEventListener("click",e=>{if(e.target.tagName!=="BUTTON")select();});
+   div.querySelector("button").onclick=select;
+  }
+  box.appendChild(div);
+ });
+ $("eligibleCount").textContent=`${eligible} disponíveis · ${state.club.players.length} atletas`;
+}
 function assign(slot){if(state.selected===null){$("message").textContent="Escolha um jogador disponível primeiro.";return;}let p=state.club.players[state.selected],s=slots()[slot];if(state.roster.length>=11)return;if(state.roster.some(x=>x.slot===slot)){$("message").textContent="Essa posição já está ocupada.";return;}if(!compatible(p,s[0])){$("message").textContent=`${p.name} não pode atuar como ${s[0]}.`;return;}const chosenClub=state.club.club;state.roster.push({...p,slot,club:chosenClub,year:state.club.year});state.selected=null;render();if(state.roster.length===11){finishDraft();return;}drawClub();$("message").textContent=`${p.name} foi adicionado! Nova campanha: ${state.club.club} (${state.club.year}).`;renderPlayers();}
 function render(){let avg=state.roster.length?state.roster.reduce((a,p)=>a+p.ovr,0)/state.roster.length:0;$("count").textContent=state.roster.length+"/11";$("avg").textContent=state.roster.length?avg.toFixed(1):"—";$("power").textContent=state.roster.length?Math.round(avg):"—";$("round").textContent=state.roster.length+"/11";$("roster").innerHTML=state.roster.map(p=>`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #263c54"><span><b>${p.name}</b><small class="muted"> · ${p.pos}</small></span><b style="color:var(--gold)">${p.ovr}</b></div>`).join("")||"<span class=muted>Nenhum jogador escolhido.</span>";renderPitch();if(state.club){$("clubTitle").textContent=state.club.club;$("campaign").textContent=state.club.year+" · "+state.club.country;}}
 function finishDraft(){let valid=state.roster.length===11&&slots().every((s,i)=>state.roster.some(p=>p.slot===i));if(!valid){$("message").textContent="Ainda existem posições pendentes.";return;}$("phase").textContent="TORNEIO";$("game").classList.add("hidden");$("tournament").classList.remove("hidden");startTournament();}
 function teamPower(team){return team.reduce((a,p)=>a+p.ovr,0)/team.length;}
-function startTournament(){let opponents=shuffle(DB.filter(c=>!state.used.includes(c.club))).slice(0,15).map(c=>({name:c.club+" "+c.year,power:teamPower(c.players),players:c.players}));let my={name:state.team,power:teamPower(state.roster),players:state.roster,isUser:true};let entrants=shuffle([my,...opponents]);state.tournament={round:0,rounds:[entrants],current:null,champion:null,history:[],eliminated:{},standings:Object.fromEntries(entrants.map(team=>[team.name,{name:team.name,played:0,wins:0,losses:0,gf:0,ga:0,stage:1,status:"Em disputa",isUser:!!team.isUser}])),playerStats:Object.fromEntries(entrants.flatMap(team=>team.players.map(p=>[playerStatKey(team,p),{name:p.name,teamName:team.name,goals:0,assists:0,appearances:0,score:6.2+((p.ovr||80)-80)*.035}])))};$("tournamentSub").textContent=`${state.team} entra na competição com força ${my.power.toFixed(1)}. 16 equipes, mata-mata em jogo único.`;prepareRound();}
-const roundNames=["Oitavas de final","Quartas de final","Semifinal","Grande final"];
-function prepareRound(){let t=state.tournament,teams=t.rounds[t.round];if(!teams||teams.length<2){declareChampion(teams?.[0]);return;}let userIndex=teams.findIndex(x=>x.isUser);let pairIndex=userIndex>=0?Math.floor(userIndex/2):0;let a=teams[pairIndex*2],b=teams[pairIndex*2+1];t.current={a,b,pairIndex,results:[],done:false,timeline:null,eventIndex:0,feed:[],liveA:0,liveB:0,minute:0,timer:null};$("tournamentRound").textContent=roundNames[t.round];$("homeName").textContent=a.name;$("awayName").textContent=b.name;$("userPower").textContent=(a.isUser?a.power:b.power).toFixed(1);$("opponentPower").textContent=(a.isUser?b.power:a.power).toFixed(1);$("score").textContent="—";$("scoreBig").textContent="VS";$("matchStatus").textContent="Aguardando";$("matchClock").textContent="00′";$("clockProgress").style.width="0%";$("matchFeed").innerHTML=`<b>Confronto definido:</b> ${a.name} x ${b.name}. Escolha a velocidade e inicie a transmissão automática.`;$("simulateBtn").classList.remove("hidden");$("simulateBtn").disabled=false;$("simulateBtn").textContent="▶ Iniciar partida";$("nextRoundBtn").classList.add("hidden");$("standingsPanel").classList.add("hidden");$("trajectory").classList.add("hidden");$("champion").classList.add("hidden");}
+
+const groupRoundNames=["1ª rodada","2ª rodada","3ª rodada"];
+function makeGroupFixtures(groups){
+ const schedule=[];
+ groups.forEach((teams,gi)=>{
+  const [a,b,c,d]=teams;
+  const rounds=[[[a,d],[b,c]],[[a,c],[d,b]],[[a,b],[c,d]]];
+  rounds.forEach((matches,ri)=>matches.forEach(pair=>schedule.push({phase:"groups",group:gi,round:ri,a:pair[0],b:pair[1],result:null})));
+ });
+ return schedule;
+}
+function startTournament(){
+ let opponentCampaigns=shuffle(DB.filter(c=>!state.used.includes(c.club))).filter((c,i,a)=>a.findIndex(x=>x.club===c.club)===i).slice(0,15);let opponents=opponentCampaigns.map(c=>({name:c.club+" "+c.year,power:teamPower(c.players),players:c.players}));
+ let my={name:state.team,power:teamPower(state.roster),players:state.roster,isUser:true};
+ let entrants=shuffle([my,...opponents]);
+ let groups=[0,1,2,3].map(i=>entrants.slice(i*4,i*4+4).map((team,j)=>({...team,group:"ABCD"[i],seed:j+1})));
+ const standings=groups.map(teams=>teams.map(team=>({team,played:0,wins:0,draws:0,losses:0,gf:0,ga:0,points:0})));
+ state.tournament={phase:"groups",groupRound:0,groups,groupStandings:standings,fixtures:makeGroupFixtures(groups),current:null,history:[],groupResults:[],bracketRounds:[],bracketIndex:0,champion:null,playerStats:Object.fromEntries(entrants.flatMap(team=>team.players.map(p=>[playerStatKey(team,p),{name:p.name,teamName:team.name,goals:0,assists:0,appearances:0,score:6.2+((p.ovr||80)-80)*.035}]))) };
+ $("stageTag").textContent="FASE DE GRUPOS";
+ $("tournamentSub").textContent=`16 equipes de clubes diferentes, divididas em 4 grupos. Cada equipe joga 3 partidas; os 2 melhores avançam às quartas de final.`;
+ $("tournamentRound").textContent="Grupos · 1ª rodada";
+ $("bracketPanel").classList.add("hidden");$("roundResults").classList.add("hidden");
+ renderStandings();prepareGroupRound();
+}
+function groupEntry(group,team){return state.tournament.groupStandings[group].find(x=>x.team.name===team.name);}
+function updateGroupTable(group,a,b,result){
+ const ea=groupEntry(group,a),eb=groupEntry(group,b);
+ ea.played++;eb.played++;ea.gf+=result.goalsA;ea.ga+=result.goalsB;eb.gf+=result.goalsB;eb.ga+=result.goalsA;
+ if(result.goalsA>result.goalsB){ea.wins++;ea.points+=3;eb.losses++;}
+ else if(result.goalsB>result.goalsA){eb.wins++;eb.points+=3;ea.losses++;}
+ else{ea.draws++;eb.draws++;ea.points++;eb.points++;}
+}
+function groupTable(group){
+ return [...state.tournament.groupStandings[group]].sort((a,b)=>b.points-a.points||(b.gf-b.ga)-(a.gf-a.ga)||b.gf-a.gf||a.team.name.localeCompare(b.team.name));
+}
+function renderStandings(){
+ const t=state.tournament;if(!t?.groupStandings)return;
+ $("standingsTable").innerHTML=`<div class="group-grid">${t.groups.map((g,gi)=>{
+  const rows=groupTable(gi);
+  return `<div class="group-card"><h4>GRUPO ${"ABCD"[gi]}</h4><div style="overflow-x:auto"><table class="table"><thead><tr><th>#</th><th>Equipe</th><th>PTS</th><th>J</th><th>SG</th></tr></thead><tbody>${rows.map((r,i)=>`<tr class="${r.team.isUser?'user-row':''}"><td>${i+1}</td><td>${r.team.isUser?'★ ':''}${r.team.name}${i<2&&t.groupRound===2?' <span class="qualified">●</span>':''}</td><td><b>${r.points}</b></td><td>${r.played}</td><td>${r.gf-r.ga>0?'+':''}${r.gf-r.ga}</td></tr>`).join("")}</tbody></table></div></div>`;
+ }).join("")}</div>`;
+ $("standingsPanel").classList.remove("hidden");
+}
+function prepareGroupRound(){
+ const t=state.tournament;t.phase="groups";
+ $("stageTag").textContent="FASE DE GRUPOS";$("tournamentRound").textContent=`Grupos · ${groupRoundNames[t.groupRound]}`;
+ const fixtures=t.fixtures.filter(f=>f.round===t.groupRound);
+ const userMatch=fixtures.find(f=>f.a.isUser||f.b.isUser);
+ if(!userMatch){finishGroups();return;}
+ t.current={...userMatch,fixtureRef:userMatch,done:false,timeline:null,eventIndex:0,feed:[],liveA:0,liveB:0,minute:0,timer:null};
+ setupMatchUI(t.current,`${groupRoundNames[t.groupRound]} · Grupo ${"ABCD"[userMatch.group]}`);
+ $("matchFeed").innerHTML=`<b>Fase de grupos · Grupo ${"ABCD"[userMatch.group]}</b><br>${userMatch.a.name} x ${userMatch.b.name}. Sua partida será transmitida ao vivo; os demais jogos desta rodada serão atualizados ao apito final.`;
+ $("nextRoundBtn").classList.add("hidden");$("simulateBtn").classList.remove("hidden");$("simulateBtn").disabled=false;$("simulateBtn").textContent="▶ Iniciar transmissão";
+ renderStandings();
+}
+function setupMatchUI(c,label){
+ $("tournamentRound").textContent=label;$("homeName").textContent=c.a.name;$("awayName").textContent=c.b.name;
+ $("userPower").textContent=(c.a.isUser?c.a.power:c.b.power).toFixed(1);$("opponentPower").textContent=(c.a.isUser?c.b.power:c.a.power).toFixed(1);
+ $("score").textContent="—";$("scoreBig").textContent="VS";$("matchStatus").textContent="Aguardando";
+ $("matchClock").textContent="00′";$("clockProgress").style.width="0%";
+ $("trajectory").classList.add("hidden");$("champion").classList.add("hidden");
+}
+function simulateGroupResult(a,b){
+ const diff=a.power-b.power;
+ const goalsA=Math.max(0,Math.min(5,Math.round(Math.random()*2+1.25+diff*.075-.8)));
+ const goalsB=Math.max(0,Math.min(5,Math.round(Math.random()*2+1.25-diff*.075-.8)));
+ return {goalsA,goalsB,winner:goalsA>goalsB?0:goalsB>goalsA?1:-1,penalties:false};
+}
+function storeGroupFixture(f,result){
+ f.result=result;updateGroupTable(f.group,f.a,f.b,result);
+ state.tournament.groupResults.push({group:"ABCD"[f.group],a:f.a.name,b:f.b.name,score:`${result.goalsA} × ${result.goalsB}`,winner:result.winner===0?f.a.name:result.winner===1?f.b.name:"Empate",round:groupRoundNames[f.round]});
+ state.tournament.history.push({a:f.a.name,b:f.b.name,score:`${result.goalsA}-${result.goalsB}`,winner:result.winner===0?f.a.name:result.winner===1?f.b.name:"Empate",round:`Grupo ${"ABCD"[f.group]} · ${groupRoundNames[f.round]}`});
+}
+function finishGroupMatch(c){
+ const t=state.tournament,result=c.result;
+ if(c.timer){clearInterval(c.timer);c.timer=null;}c.done=true;
+ storeGroupFixture(c.fixtureRef||c,result);
+ // Simula os outros sete jogos da mesma rodada, preservando o placar e os dados individuais.
+ const others=t.fixtures.filter(f=>f.round===t.groupRound&&f!==(c.fixtureRef||c)&&!f.result);
+ others.forEach(f=>{const r=simulateGroupResult(f.a,f.b);recordAutoMatch(f.a,f.b,r);storeGroupFixture(f,r);});
+ $("simulateBtn").classList.add("hidden");$("matchStatus").textContent="Rodada encerrada";
+ $("matchFeed").innerHTML=c.feed.join("")+`<div class="match-event"><span class="minute">FIM</span> <b>Apito final!</b> ${c.a.name} ${result.goalsA} × ${result.goalsB} ${c.b.name}.</div>`;
+ $("score").textContent=`${result.goalsA} × ${result.goalsB}`;$("scoreBig").textContent=`${result.goalsA} : ${result.goalsB}`;
+ renderStandings();renderGroupRoundResults();
+ if(t.groupRound<2){
+  $("nextRoundBtn").textContent="Próxima rodada de grupos →";$("nextRoundBtn").classList.remove("hidden");
+ }else{
+  qualifyGroups();
+ }
+}
+function renderGroupRoundResults(){
+ const t=state.tournament,items=t.groupResults.filter(x=>x.round===groupRoundNames[t.groupRound]);
+ $("roundResults").innerHTML=`<h3>Resultados · ${groupRoundNames[t.groupRound]}</h3><div class="round-results">${items.map(x=>`<div class="round-result"><span><small class="muted">Grupo ${x.group}</small><br>${x.a} × ${x.b}</span><b>${x.score}</b></div>`).join("")}</div>`;
+ $("roundResults").classList.remove("hidden");
+}
+function qualifyGroups(){
+ const t=state.tournament;
+ const qualifiers=t.groups.map((g,i)=>groupTable(i).slice(0,2).map((r,seed)=>({...r.team,group:"ABCD"[i],seed:seed+1})));
+ const userQualified=qualifiers.flat().some(x=>x.isUser);
+ t.qualifiers=qualifiers.flat();
+ $("matchStatus").textContent=userQualified?"Classificado às quartas!":"Eliminado na fase de grupos";
+ $("nextRoundBtn").classList.add("hidden");
+ if(userQualified){
+  buildQuarterfinals(qualifiers);
+  $("matchFeed").insertAdjacentHTML("beforeend",`<div class="match-event goal"><b>🏆 FASE DE GRUPOS CONCLUÍDA!</b> ${state.team} garantiu vaga no mata-mata. Veja o chaveamento abaixo.</div>`);
+  $("bracketPanel").classList.remove("hidden");renderBracket();
+  $("nextRoundBtn").textContent="Ir para as quartas de final →";$("nextRoundBtn").classList.remove("hidden");
+ }else{
+  t.bracketIndex=-1;
+  simulateRemainingKnockout(qualifiers.flat());
+  showTrajectory();
+ }
+}
+function buildQuarterfinals(q){
+ const byGroup=Object.fromEntries(q.map((teams,i)=>["ABCD"[i],teams]));
+ const pairs=[[byGroup.A[0],byGroup.B[1]],[byGroup.C[0],byGroup.D[1]],[byGroup.B[0],byGroup.A[1]],[byGroup.D[0],byGroup.C[1]]];
+ state.tournament.bracketRounds=[pairs.map((p,i)=>({a:p[0],b:p[1],result:null,winner:null,label:`QF${i+1}`})),[],[]];
+ state.tournament.bracketIndex=0;
+}
+function renderBracket(){
+ const t=state.tournament,names=["Quartas de final","Semifinais","Grande final"];
+ $("bracket").innerHTML=`<div class="bracket-grid">${t.bracketRounds.map((round,ri)=>`<div class="bracket-round"><h4>${names[ri]}</h4>${round.length?round.map((m,i)=>`<div class="bracket-match"><div>${m.a?.name||"A definir"} <span class="score">${m.result?m.result.goalsA:"—"}</span></div><div>${m.b?.name||"A definir"} <span class="score">${m.result?m.result.goalsB:"—"}</span></div>${m.winner?`<div class="winner">✓ ${m.winner.name}</div>`:""}</div>`).join(""):'<div class="muted" style="font-size:11px">Aguardando classificação anterior</div>'}`).join("")}</div>`;
+ $("bracketPanel").classList.remove("hidden");
+}
+function prepareKnockout(){
+ const t=state.tournament,round=t.bracketRounds[t.bracketIndex];
+ const match=round.find(m=>m.a.isUser||m.b.isUser);
+ if(!match){simulateRemainingKnockout(t.qualifiers);return;}
+ t.current={...match,phase:"knockout",matchRef:match,done:false,timeline:null,eventIndex:0,feed:[],liveA:0,liveB:0,minute:0,timer:null};
+ $("stageTag").textContent="MATA-MATA";setupMatchUI(t.current,["Quartas de final","Semifinais","Grande final"][t.bracketIndex]);
+ $("matchFeed").innerHTML=`<b>${["Quartas de final","Semifinais","Grande final"][t.bracketIndex]}</b><br>${match.a.name} x ${match.b.name}. Jogo único: empate leva aos pênaltis.`;
+ $("simulateBtn").classList.remove("hidden");$("simulateBtn").disabled=false;$("simulateBtn").textContent="▶ Iniciar transmissão";$("nextRoundBtn").classList.add("hidden");
+ renderBracket();
+}
+function completeKnockoutRound(c){
+ const t=state.tournament,round=t.bracketRounds[t.bracketIndex],match=c.matchRef,result=c.result;
+ match.result=result;match.winner=result.winner===0?match.a:match.b;
+ t.history.push({a:match.a.name,b:match.b.name,score:`${result.goalsA}-${result.goalsB}${result.penalties?` (${result.penA}-${result.penB} pen.)`:""}`,winner:match.winner.name,round:["Quartas de final","Semifinais","Grande final"][t.bracketIndex]});
+ const other=round.filter(m=>m!==match&&!m.result);
+ other.forEach(m=>{
+  const r=simulateScore(m.a,m.b);recordAutoMatch(m.a,m.b,r);m.result=r;m.winner=r.winner===0?m.a:m.b;
+  t.history.push({a:m.a.name,b:m.b.name,score:`${r.goalsA}-${r.goalsB}${r.penalties?` (${r.penA}-${r.penB} pen.)`:""}`,winner:m.winner.name,round:["Quartas de final","Semifinais","Grande final"][t.bracketIndex]});
+ });
+ renderBracket();$("simulateBtn").classList.add("hidden");
+ if(!match.winner.isUser){
+  $("matchStatus").textContent="Eliminado";simulateRemainingKnockout(t.bracketRounds[t.bracketIndex].map(m=>m.winner).filter(Boolean));showTrajectory();return;
+ }
+ if(t.bracketIndex===2){declareChampion(match.winner);showTrajectory();return;}
+ const winners=round.map(m=>m.winner);
+ const next=[];
+ for(let i=0;i<winners.length;i+=2)next.push({a:winners[i],b:winners[i+1],result:null,winner:null,label:`${t.bracketIndex===0?"SF":"F"}${i/2+1}`});
+ t.bracketRounds[t.bracketIndex+1]=next;
+ $("matchStatus").textContent="Classificado!";
+ $("matchFeed").insertAdjacentHTML("beforeend",`<div class="match-event goal"><b>🏆 ${match.winner.name} avança!</b> Confira o chaveamento atualizado.</div>`);
+ renderBracket();$("nextRoundBtn").textContent=`Ir para ${t.bracketIndex===0?"as semifinais":"a grande final"} →`;$("nextRoundBtn").classList.remove("hidden");
+}
+function simulateRemainingKnockout(teams){
+ const t=state.tournament;
+ let current=teams;
+ let start=t.bracketIndex<0?0:t.bracketIndex+1;
+ for(let ri=start;ri<3;ri++){
+  const matches=[];
+  for(let i=0;i<current.length;i+=2){
+   if(!current[i+1])continue;
+   const a=current[i],b=current[i+1],r=simulateScore(a,b);recordAutoMatch(a,b,r);
+   const winner=r.winner===0?a:b;
+   matches.push({a,b,result:r,winner});
+   t.history.push({a:a.name,b:b.name,score:`${r.goalsA}-${r.goalsB}${r.penalties?` (${r.penA}-${r.penB} pen.)`:""}`,winner:winner.name,round:["Quartas de final","Semifinais","Grande final"][ri]});
+  }
+  t.bracketRounds[ri]=matches;
+  current=matches.map(m=>m.winner);
+  if(current.length===1)break;
+ }
+ if(current[0])declareChampion(current[0]);
+ renderBracket();
+}
+function advanceRound(){
+ const t=state.tournament;
+ if(t.phase==="groups"){
+  if(t.groupRound<2){t.groupRound++;prepareGroupRound();}
+  else{t.phase="knockout";t.bracketIndex=0;$("roundResults").classList.add("hidden");$("stageTag").textContent="MATA-MATA";prepareKnockout();}
+ }else{
+  t.bracketIndex++;prepareKnockout();
+ }
+}
+function simulateGroupScore(a,b){return simulateGroupResult(a,b);}
 function simulateScore(a,b){let diff=a.power-b.power;let baseA=1.35+diff*.075,baseB=1.25-diff*.075;let goalsA=Math.max(0,Math.min(5,Math.round(Math.random()*2+baseA-0.8)));let goalsB=Math.max(0,Math.min(5,Math.round(Math.random()*2+baseB-0.8)));if(goalsA===goalsB){let winner=Math.random()<(0.5+Math.max(-.2,Math.min(.2,diff*.018)))?0:1;const penA=winner===0?5+Math.floor(Math.random()*3):3+Math.floor(Math.random()*2);const penB=winner===1?5+Math.floor(Math.random()*3):3+Math.floor(Math.random()*2);return {goalsA,goalsB,winner,penalties:true,penA,penB};}return {goalsA,goalsB,winner:goalsA>goalsB?0:1,penalties:false};}
 function playerRole(p,team){
  if(team.isUser && Number.isInteger(p.slot) && formations[state.formation]?.[p.slot]) return formations[state.formation][p.slot][0];
@@ -132,7 +424,7 @@ function pickScorer(team){
  return pool[Math.floor(Math.random()*Math.max(1,pool.length))]||players[0]||{name:team.name,pos:"CA"};
 }
 function buildTimeline(c){
- const result=simulateScore(c.a,c.b), events=[{minute:1,html:`<b>Apito inicial!</b> A bola está rolando: ${c.a.name} x ${c.b.name}.`}];
+ const result=c.phase==="groups"?simulateGroupScore(c.a,c.b):simulateScore(c.a,c.b), events=[{minute:1,html:`<b>Apito inicial!</b> A bola está rolando: ${c.a.name} x ${c.b.name}.`}];
  const goalEvents=[];
  function addGoals(team,amount,side){
   for(let i=0;i<amount;i++){
@@ -200,7 +492,7 @@ function showTrajectory(){
  const t=state.tournament,own=t.history.filter(m=>m.a===state.team||m.b===state.team);
  const stats=Object.values(t.playerStats||{}).filter(s=>s.teamName===state.team);
  const goals=stats.reduce((n,s)=>n+s.goals,0),assists=stats.reduce((n,s)=>n+s.assists,0);
- const results=own.map(m=>`<div class="match-event"><span class="minute">${m.round}</span> <b>${m.a}</b> ${m.score} <b>${m.b}</b> · ${m.winner===state.team?'<span class="good">Classificado</span>':'<span style="color:var(--red)">Eliminado</span>'}</div>`).join("");
+ const results=own.map(m=>`<div class="match-event"><span class="minute">${m.round}</span> <b>${m.a}</b> ${m.score} <b>${m.b}</b> · ${m.winner===state.team?'<span class="good">Classificado</span>':m.winner==="Empate"?'<span class="warn">Empate</span>':'<span style="color:var(--red)">Derrota</span>'}</div>`).join("");
  $("trajectory").innerHTML=`<div class="award-card"><div class="crown">📜</div><div style="color:var(--gold);font-weight:900;letter-spacing:1px">TRAJETÓRIA DO ${state.team.toUpperCase()}</div><h3 style="margin:8px 0">Sua campanha na Glória Eterna</h3><div class="stats"><div class="stat"><small>PARTIDAS</small><b>${own.length}</b></div><div class="stat"><small>VITÓRIAS</small><b>${own.filter(m=>m.winner===state.team).length}</b></div><div class="stat"><small>GOLS</small><b>${goals}</b></div><div class="stat"><small>ASSISTÊNCIAS</small><b>${assists}</b></div></div><h3>Resumo dos confrontos</h3>${results||'<p class="muted">Nenhuma partida registrada.</p>'}<p style="margin:12px 0 0"><b>Fim da campanha:</b> ${own.length?own[own.length-1].round:"—"}</p></div>`;
  $("trajectory").classList.remove("hidden");
  $("trajectory").scrollIntoView({behavior:"smooth",block:"start"});
@@ -224,38 +516,13 @@ function finishTournamentAfterElimination(currentWinners){
 }
 
 function finishLiveMatch(c){
- const t=state.tournament,result=c.result,winner=result.winner===0?c.a:c.b,loser=result.winner===0?c.b:c.a;
- if(c.timer){clearInterval(c.timer);c.timer=null;}
- c.done=true;c.winner=winner;
- if(result.penalties){c.feed.push(`<div class="match-event"><span class="minute">PÊN.</span> 🥅 Empate! ${winner.name} vence nas cobranças (${result.penA} × ${result.penB}).</div>`);}
- c.feed.push(`<div class="match-event"><span class="minute">FIM</span> 🏁 <b>${winner.name} está classificado!</b></div>`);
- $("score").textContent=`${result.goalsA} × ${result.goalsB}${result.penalties?` (${result.penA} × ${result.penB} pen.)`:""}`;
- $("scoreBig").textContent=`${result.goalsA} : ${result.goalsB}`;
- $("matchStatus").textContent=winner.isUser?"Classificado!":(loser.isUser?"Eliminado":"Partida encerrada");
- $("matchFeed").innerHTML=c.feed.join("");
- recordTournamentResult(c.a,c.b,result,t.round);
- t.history.push({a:c.a.name,b:c.b.name,score:`${result.goalsA}-${result.goalsB}${result.penalties?` (${result.penA}-${result.penB} pen.)`:""}`,winner:winner.name,round:roundNames[t.round]});
- let winners=[];
- for(let i=0;i<t.rounds[t.round].length;i+=2){
-  let x=t.rounds[t.round][i],y=t.rounds[t.round][i+1];
-  if(i===c.pairIndex*2){winners.push(winner);continue;}
-  let r=simulateScore(x,y);recordAutoMatch(x,y,r);recordTournamentResult(x,y,r,t.round);
-  const w=r.winner===0?x:y;
-  winners.push(w);
-  t.history.push({a:x.name,b:y.name,score:`${r.goalsA}-${r.goalsB}${r.penalties?` (${r.penA}-${r.penB} pen.)`:""}`,winner:w.name,round:roundNames[t.round]});
- }
- t.rounds[t.round+1]=winners;
- $("simulateBtn").classList.add("hidden");
- renderStandings();
- if(loser.isUser){
-  $("matchStatus").textContent="Eliminado";
-  finishTournamentAfterElimination(winners);
- }else if(t.round===3){
-  declareChampion(winners[0]);renderStandings();
- }else{
-  $("nextRoundBtn").classList.remove("hidden");
-  $("matchFeed").insertAdjacentHTML("beforeend",`<p class="good"><b>Rodada encerrada.</b> A classificação atual foi atualizada abaixo.</p>`);
- }
+ if(c.phase==="groups"){finishGroupMatch(c);return;}
+ const t=state.tournament,result=c.result;
+ if(c.timer){clearInterval(c.timer);c.timer=null;}c.done=true;
+ if(result.penalties)c.feed.push(`<div class="match-event"><span class="minute">PÊN.</span> 🥅 ${result.penA} × ${result.penB} nas cobranças.</div>`);
+ c.feed.push(`<div class="match-event"><span class="minute">FIM</span> 🏁 <b>Apito final!</b></div>`);
+ $("matchFeed").innerHTML=c.feed.join("");$("score").textContent=`${result.goalsA} × ${result.goalsB}${result.penalties?` (${result.penA} × ${result.penB} pen.)`:""}`;$("scoreBig").textContent=`${result.goalsA} : ${result.goalsB}`;
+ completeKnockoutRound(c);
 }
 function changeMatchSpeed(){
  const c=state.tournament?.current;if(!c||!c.timer)return;
