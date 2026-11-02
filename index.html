@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>A Glória Eterna — V1.3</title>
+<title>A Glória Eterna — V1.4</title>
 <style>
 :root{--bg:#07111f;--panel:#101e31;--panel2:#15263c;--line:#29415e;--gold:#f5c451;--green:#35c58a;--muted:#9db0c7;--white:#f5f7fb;--red:#ff7373}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#1b3552 0,#07111f 48%);color:var(--white);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
@@ -13,7 +13,7 @@ main{max-width:1180px;margin:22px auto;padding:0 14px 60px}.hero{display:flex;ju
 .boxline{position:absolute;left:20%;width:60%;height:14%;border:2px solid #d5e3d6aa}.boxline.top{top:0;border-top:0}.boxline.bottom{bottom:0;border-bottom:0}
 .slot{position:absolute;transform:translate(-50%,-50%);width:68px;min-height:48px;border:1px dashed #ffffffaa;border-radius:10px;background:#071b2acc;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4px;font-size:10px;cursor:pointer;z-index:2}
 .slot strong{font-size:11px;color:#ffe08a}.slot.filled{background:#082d27;border:1px solid var(--green);box-shadow:0 0 0 2px #35c58a22}.slot.selected{outline:3px solid var(--gold)}.slot em{font-style:normal;color:#d9e7f5;font-size:9px;max-width:65px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.player{background:linear-gradient(135deg,#10243a,#0a1727);border:1px solid #29415e;border-radius:12px;padding:10px;display:flex;justify-content:space-between;gap:8px;align-items:center}.player b{display:block}.player small{color:var(--muted)}.player.active{border-color:var(--gold);box-shadow:0 0 0 2px #f5c45130;transform:translateY(-1px)}.player.unavailable{opacity:.38;filter:grayscale(.8);border-style:dashed}.player.unavailable button{background:#293747;color:#9aabba}.player small.status{display:block;color:var(--gold);font-size:10px;margin-top:3px}.ovr{color:var(--gold);font-weight:900;font-size:18px}.btn,button,select,input{font:inherit}.btn{border:0;border-radius:10px;padding:10px 13px;background:var(--gold);color:#172033;font-weight:800;cursor:pointer}.btn.secondary{background:#213953;color:#e8f1fc;border:1px solid #385775}.btn:disabled{opacity:.4;cursor:not-allowed}input,select{background:#081727;color:#fff;border:1px solid #35516e;border-radius:9px;padding:10px;max-width:100%}label{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}.chem{display:flex;align-items:center;gap:10px}.bar{height:9px;background:#263b50;border-radius:99px;overflow:hidden;flex:1}.bar i{display:block;height:100%;background:linear-gradient(90deg,#35c58a,#f5c451);width:0}.hidden{display:none!important}.round{color:var(--gold);font-weight:800}.notice{padding:12px 14px;border-radius:10px;background:#1b2c40;color:#dce9f7;margin:10px 0}.good{color:var(--green)}.goal{color:var(--gold);font-weight:900}.pulse{animation:pulse .65s ease}@keyframes pulse{50%{transform:scale(1.035);box-shadow:0 0 0 5px #f5c45122}}.match-event{padding:7px 0;border-bottom:1px solid #ffffff14}.match-event:last-child{border:0}.champion-glow{border:1px solid var(--gold);background:linear-gradient(135deg,#423315,#14263c)}.warn{color:var(--gold)}.table{width:100%;border-collapse:collapse;font-size:13px}.table td,.table th{padding:8px;border-bottom:1px solid #263c54;text-align:left}.table th{color:var(--muted);font-weight:600}.footer{color:#8196ae;font-size:11px;margin-top:16px}
+.players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.player{background:linear-gradient(135deg,#10243a,#0a1727);border:1px solid #29415e;border-radius:12px;padding:10px;display:flex;justify-content:space-between;gap:8px;align-items:center}.player b{display:block}.player small{color:var(--muted)}.player.active{border-color:var(--gold);box-shadow:0 0 0 2px #f5c45130;transform:translateY(-1px)}.player.unavailable{opacity:.38;filter:grayscale(.8);border-style:dashed}.player.unavailable button{background:#293747;color:#9aabba}.player small.status{display:block;color:var(--gold);font-size:10px;margin-top:3px}.ovr{color:var(--gold);font-weight:900;font-size:18px}.btn,button,select,input{font:inherit}.btn{border:0;border-radius:10px;padding:10px 13px;background:var(--gold);color:#172033;font-weight:800;cursor:pointer}.btn.secondary{background:#213953;color:#e8f1fc;border:1px solid #385775}.btn:disabled{opacity:.4;cursor:not-allowed}input,select{background:#081727;color:#fff;border:1px solid #35516e;border-radius:9px;padding:10px;max-width:100%}label{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}.chem{display:flex;align-items:center;gap:10px}.bar{height:9px;background:#263b50;border-radius:99px;overflow:hidden;flex:1}.bar i{display:block;height:100%;background:linear-gradient(90deg,#35c58a,#f5c451);width:0}.hidden{display:none!important}.round{color:var(--gold);font-weight:800}.notice{padding:12px 14px;border-radius:10px;background:#1b2c40;color:#dce9f7;margin:10px 0}.good{color:var(--green)}.goal{color:var(--gold);font-weight:900}.pulse{animation:pulse .65s ease}@keyframes pulse{50%{transform:scale(1.035);box-shadow:0 0 0 5px #f5c45122}}.match-event{padding:7px 0;border-bottom:1px solid #ffffff14}.match-event:last-child{border:0}.minute{display:inline-block;min-width:42px;color:var(--gold);font-weight:900}.match-event.goal{background:#f5c45112;padding:10px;border-radius:9px;margin:5px 0}.award-card{margin-top:12px;padding:16px;border:1px solid var(--gold);border-radius:14px;background:linear-gradient(135deg,#483814,#182b40);box-shadow:0 0 28px #f5c45120}.award-card .crown{font-size:36px}.champion-glow{border:1px solid var(--gold);background:linear-gradient(135deg,#423315,#14263c)}.warn{color:var(--gold)}.table{width:100%;border-collapse:collapse;font-size:13px}.table td,.table th{padding:8px;border-bottom:1px solid #263c54;text-align:left}.table th{color:var(--muted);font-weight:600}.footer{color:#8196ae;font-size:11px;margin-top:16px}
 @media(max-width:850px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.pitch{max-height:none}.slot{width:58px;min-height:43px;font-size:9px}.slot strong{font-size:10px}.players{grid-template-columns:1fr 1fr}}
 @media(max-width:430px){main{padding:0 9px 40px}.panel{padding:12px}.players{grid-template-columns:1fr}.slot{width:51px;min-height:39px;padding:2px}.slot em{max-width:48px}.hero{align-items:start;flex-direction:column}}
 </style></head>
@@ -28,10 +28,10 @@ main{max-width:1180px;margin:22px auto;padding:0 14px 60px}.hero{display:flex;ju
 <div id="game" class="hidden">
 <div class="stats"><div class="stat"><small>JOGADORES</small><b id="count">0/11</b></div><div class="stat"><small>OVERALL MÉDIO</small><b id="avg">—</b></div><div class="stat"><small>FORÇA DO ELENCO</small><b id="power">—</b></div><div class="stat"><small>RODADA</small><b id="round">0/11</b></div></div>
 <div class="grid">
-<section class="panel"><div class="row" style="justify-content:space-between"><h2 id="clubTitle">Equipe sorteada</h2><span class="round" id="campaign"></span></div><div class="field-wrap"><div class="pitch" id="pitch"><div class="boxline top"></div><div class="boxline bottom"></div></div></div><div class="row" style="justify-content:space-between;margin:12px 0"><b>Jogadores disponíveis</b><span class="muted" id="clubProgress"></span></div><div class="players" id="players"></div><div class="notice" id="message">Escolha um jogador habilitado e depois toque em uma das posições destacadas no campo.</div></section>
-<aside class="panel"><h2>Seu elenco</h2><div class="notice">Complete as 11 posições. Jogadores incompatíveis com as vagas restantes ficam bloqueados.</div><div id="roster"></div><div class="notice" id="draftHint">A cada escolha, uma nova campanha será sorteada automaticamente.</div></aside>
+<section class="panel"><div class="row" style="justify-content:space-between"><h2 id="clubTitle">Equipe sorteada</h2><span class="round" id="campaign"></span></div><div class="field-wrap"><div class="pitch" id="pitch"><div class="boxline top"></div><div class="boxline bottom"></div></div></div><div class="row" style="justify-content:space-between;margin:12px 0"><b>Jogadores disponíveis</b><span class="muted" id="clubProgress"></span></div><div class="players" id="players"></div><div class="notice" id="message">Escolha um jogador habilitado e depois toque em uma das posições destacadas no campo.</div><p class="footer">Critério de posição: posição principal da campanha; função secundária somente quando documentada para aquele clube e temporada. Ex.: <a href="https://www.transfermarkt.com.br/juan-roman-riquelme/profil/spieler/3854" target="_blank" rel="noopener">Riquelme</a> como meia ofensivo e <a href="https://www.terra.com.br/esportes/lance/gabigol-nao-se-incomoda-com-troca-de-posicoes-no-fla-e-uma-coisa-boa,3e159208791802b8a3c334a06368802dz3kpzy0l.html" target="_blank" rel="noopener">Gabigol no Flamengo 2019</a> também aberto pela direita.</p></section>
+<aside class="panel"><h2>Seu elenco</h2><div class="notice">Complete as 11 posições. Jogadores incompatíveis com as vagas restantes ficam bloqueados.</div><div id="roster"></div><div class="notice" id="draftHint">A cada escolha, uma nova campanha será sorteada automaticamente. Posições secundárias só são liberadas quando documentadas.</div></aside>
 </div></div>
-<section class="panel hidden" id="tournament" style="margin-top:18px"><div class="row" style="justify-content:space-between"><div><span class="tag">FASE ELIMINATÓRIA</span><h2 style="margin:10px 0 2px">A Glória Eterna</h2><p class="muted" id="tournamentSub">Seu elenco está pronto. A América espera.</p></div><div class="stat"><small>FASE</small><b id="tournamentRound">Oitavas</b></div></div><div class="stats" id="tournamentStats"><div class="stat"><small>SEU TIME</small><b id="userPower">—</b></div><div class="stat"><small>ADVERSÁRIO</small><b id="opponentPower">—</b></div><div class="stat"><small>PLACAR</small><b id="score">—</b></div><div class="stat"><small>SITUAÇÃO</small><b id="matchStatus">Aguardando</b></div></div><div class="field-wrap" style="margin:14px 0"><div class="row" style="justify-content:space-around;align-items:center;text-align:center"><div><div style="font-size:34px">🛡️</div><b id="homeName">Seu time</b></div><div style="font-size:25px;color:var(--gold);font-weight:900" id="scoreBig">VS</div><div><div style="font-size:34px">🏆</div><b id="awayName">Adversário</b></div></div></div><h3>Central da partida</h3><div id="matchFeed" class="notice" style="min-height:100px">O sorteio das oitavas está pronto.</div><div class="row"><button class="btn" id="simulateBtn" onclick="simulateNext()">▶ Simular partida</button><button class="btn secondary hidden" id="nextRoundBtn" onclick="advanceRound()">Próxima fase →</button></div><div id="champion" class="hidden notice" style="margin-top:16px;text-align:center;font-size:20px"></div></section>
+<section class="panel hidden" id="tournament" style="margin-top:18px"><div class="row" style="justify-content:space-between"><div><span class="tag">FASE ELIMINATÓRIA</span><h2 style="margin:10px 0 2px">A Glória Eterna</h2><p class="muted" id="tournamentSub">Seu elenco está pronto. A América espera.</p></div><div class="stat"><small>FASE</small><b id="tournamentRound">Oitavas</b></div></div><div class="stats" id="tournamentStats"><div class="stat"><small>SEU TIME</small><b id="userPower">—</b></div><div class="stat"><small>ADVERSÁRIO</small><b id="opponentPower">—</b></div><div class="stat"><small>PLACAR</small><b id="score">—</b></div><div class="stat"><small>SITUAÇÃO</small><b id="matchStatus">Aguardando</b></div></div><div class="field-wrap" style="margin:14px 0"><div class="row" style="justify-content:space-around;align-items:center;text-align:center"><div><div style="font-size:34px">🛡️</div><b id="homeName">Seu time</b></div><div style="font-size:25px;color:var(--gold);font-weight:900" id="scoreBig">VS</div><div><div style="font-size:34px">🏆</div><b id="awayName">Adversário</b></div></div></div><h3>Central da partida</h3><div id="matchFeed" class="notice" style="min-height:100px">O sorteio das oitavas está pronto.</div><div class="row"><button class="btn" id="simulateBtn" onclick="simulateNext()">▶ Iniciar partida</button><button class="btn secondary hidden" id="nextRoundBtn" onclick="advanceRound()">Próxima fase →</button></div><div id="champion" class="hidden notice" style="margin-top:16px;text-align:center;font-size:20px"></div></section>
 </main>
 <script>
 const DB=[
@@ -99,8 +99,14 @@ const $=id=>document.getElementById(id);
 function init(){$("formation").innerHTML=Object.keys(formations).map(f=>`<option>${f}</option>`).join("");}
 function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
 function startDraft(){state.team=$("teamName").value.trim()||"Meu Clube";state.formation=$("formation").value;state.style=$("style").value;state.speed=$("speed").value;state.roster=[];state.used=[];state.round=0;$("setup").classList.add("hidden");$("game").classList.remove("hidden");$("phase").textContent="DRAFT HISTÓRICO";drawClub();render();}
-function drawClub(){let choices=shuffle(DB.filter(c=>!state.used.includes(c.club)));if(!choices.length){$("message").textContent="Todas as campanhas foram utilizadas. Não há clubes repetidos disponíveis.";return;}state.club=choices[0];state.used.push(state.club.club);state.round++;state.selected=null;$("clubTitle").textContent=state.club.club;$("campaign").textContent=state.club.year+" · "+state.club.country;$("clubProgress").textContent="Campanha "+state.round+" · 1 jogador por clube";renderPlayers();render();}
-function possiblePositions(p){const map={GOL:["GOL"],LD:["LD","LE","ZAG","MC","PE","PD"],LE:["LE","LD","ZAG","MC","PE","PD"],ZAG:["ZAG","LD"],VOL:["VOL","MC","MEI","ZAG","CA"],MC:["MC","VOL","MEI","PE","PD","CA"],MEI:["MEI","MC","PE","PD","CA"],PE:["PE","PD","MEI","CA","MC"],PD:["PD","PE","MEI","CA","MC"],CA:["CA","PE","PD","MEI","MC"]};return map[p.pos]||[p.pos];}
+function drawClub(){const open=slots().map((s,i)=>({s,i})).filter(x=>!state.roster.some(r=>r.slot===x.i));let choices=shuffle(DB.filter(c=>!state.used.includes(c.club)&&c.players.some(p=>open.some(x=>compatible(p,x.s[0])))));if(!choices.length){$("message").textContent="Não há outra campanha disponível com jogador para as posições restantes. Reinicie ou escolha outra formação.";return;}state.club=choices[0];state.used.push(state.club.club);state.round++;state.selected=null;$("clubTitle").textContent=state.club.club;$("campaign").textContent=state.club.year+" · "+state.club.country;$("clubProgress").textContent="Campanha "+state.round+" · 1 jogador por clube";renderPlayers();render();}
+function possiblePositions(p){
+// Posição principal da campanha. Segundas posições só entram quando há registro histórico específico.
+const extra=[];
+// Gabigol também foi usado aberto pela direita no Flamengo de 2019; não generalizar para outras temporadas.
+if(p.name==="Gabriel Barbosa" && state.club?.club==="Flamengo" && state.club?.year==="2019") extra.push("PD");
+return [...new Set([p.pos,...extra])];
+}
 function compatible(p,slot){return possiblePositions(p).includes(slot);}
 function slots(){return formations[state.formation];}
 function openSlotsFor(p){return slots().map((s,i)=>({s,i})).filter(x=>!state.roster.some(r=>r.slot===x.i)&&compatible(p,x.s[0]));}
@@ -110,13 +116,109 @@ function assign(slot){if(state.selected===null){$("message").textContent="Escolh
 function render(){let avg=state.roster.length?state.roster.reduce((a,p)=>a+p.ovr,0)/state.roster.length:0;$("count").textContent=state.roster.length+"/11";$("avg").textContent=state.roster.length?avg.toFixed(1):"—";$("power").textContent=state.roster.length?Math.round(avg):"—";$("round").textContent=state.roster.length+"/11";$("roster").innerHTML=state.roster.map(p=>`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #263c54"><span><b>${p.name}</b><small class="muted"> · ${p.pos}</small></span><b style="color:var(--gold)">${p.ovr}</b></div>`).join("")||"<span class=muted>Nenhum jogador escolhido.</span>";renderPitch();if(state.club){$("clubTitle").textContent=state.club.club;$("campaign").textContent=state.club.year+" · "+state.club.country;}}
 function finishDraft(){let valid=state.roster.length===11&&slots().every((s,i)=>state.roster.some(p=>p.slot===i));if(!valid){$("message").textContent="Ainda existem posições pendentes.";return;}$("phase").textContent="TORNEIO";$("game").classList.add("hidden");$("tournament").classList.remove("hidden");startTournament();}
 function teamPower(team){return team.reduce((a,p)=>a+p.ovr,0)/team.length;}
-function startTournament(){let opponents=shuffle(DB.filter(c=>!state.used.includes(c.club))).slice(0,15).map(c=>({name:c.club+" "+c.year,power:teamPower(c.players),players:c.players}));let my={name:state.team,power:teamPower(state.roster),players:state.roster,isUser:true};let entrants=shuffle([my,...opponents]);state.tournament={round:0,rounds:[entrants],current:null,champion:null,history:[]};$("tournamentSub").textContent=`${state.team} entra na competição com força ${my.power.toFixed(1)}. 16 equipes, mata-mata em jogo único.`;prepareRound();}
+function startTournament(){let opponents=shuffle(DB.filter(c=>!state.used.includes(c.club))).slice(0,15).map(c=>({name:c.club+" "+c.year,power:teamPower(c.players),players:c.players}));let my={name:state.team,power:teamPower(state.roster),players:state.roster,isUser:true};let entrants=shuffle([my,...opponents]);state.tournament={round:0,rounds:[entrants],current:null,champion:null,history:[],playerStats:Object.fromEntries(entrants.flatMap(team=>team.players.map(p=>[playerStatKey(team,p),{name:p.name,teamName:team.name,goals:0,assists:0,appearances:0,score:6.2+((p.ovr||80)-80)*.035}])))};$("tournamentSub").textContent=`${state.team} entra na competição com força ${my.power.toFixed(1)}. 16 equipes, mata-mata em jogo único.`;prepareRound();}
 const roundNames=["Oitavas de final","Quartas de final","Semifinal","Grande final"];
-function prepareRound(){let t=state.tournament,teams=t.rounds[t.round];if(!teams||teams.length<2){declareChampion(teams?.[0]);return;}let userIndex=teams.findIndex(x=>x.isUser);let pairIndex=userIndex>=0?Math.floor(userIndex/2):0;let a=teams[pairIndex*2],b=teams[pairIndex*2+1];t.current={a,b,pairIndex,results:[],done:false};$("tournamentRound").textContent=roundNames[t.round];$("homeName").textContent=a.name;$("awayName").textContent=b.name;$("userPower").textContent=(a.isUser?a.power:b.power).toFixed(1);$("opponentPower").textContent=(a.isUser?b.power:a.power).toFixed(1);$("score").textContent="—";$("scoreBig").textContent="VS";$("matchStatus").textContent="Aguardando";$("matchFeed").innerHTML=`<b>Confronto definido:</b> ${a.name} x ${b.name}. Clique para iniciar a simulação.`;$("simulateBtn").classList.remove("hidden");$("simulateBtn").disabled=false;$("nextRoundBtn").classList.add("hidden");$("champion").classList.add("hidden");}
+function prepareRound(){let t=state.tournament,teams=t.rounds[t.round];if(!teams||teams.length<2){declareChampion(teams?.[0]);return;}let userIndex=teams.findIndex(x=>x.isUser);let pairIndex=userIndex>=0?Math.floor(userIndex/2):0;let a=teams[pairIndex*2],b=teams[pairIndex*2+1];t.current={a,b,pairIndex,results:[],done:false,timeline:null,eventIndex:0,feed:[],liveA:0,liveB:0};$("tournamentRound").textContent=roundNames[t.round];$("homeName").textContent=a.name;$("awayName").textContent=b.name;$("userPower").textContent=(a.isUser?a.power:b.power).toFixed(1);$("opponentPower").textContent=(a.isUser?b.power:a.power).toFixed(1);$("score").textContent="—";$("scoreBig").textContent="VS";$("matchStatus").textContent="Aguardando";$("matchFeed").innerHTML=`<b>Confronto definido:</b> ${a.name} x ${b.name}. Toque em Iniciar partida e acompanhe cada lance.`;$("simulateBtn").classList.remove("hidden");$("simulateBtn").disabled=false;$("simulateBtn").textContent="▶ Iniciar partida";$("nextRoundBtn").classList.add("hidden");$("champion").classList.add("hidden");}
 function simulateScore(a,b){let diff=a.power-b.power;let baseA=1.35+diff*.075,baseB=1.25-diff*.075;let goalsA=Math.max(0,Math.min(5,Math.round(Math.random()*2+baseA-0.8)));let goalsB=Math.max(0,Math.min(5,Math.round(Math.random()*2+baseB-0.8)));if(goalsA===goalsB){let winner=Math.random()<(0.5+Math.max(-.2,Math.min(.2,diff*.018)))?0:1;const penA=winner===0?5+Math.floor(Math.random()*3):3+Math.floor(Math.random()*2);const penB=winner===1?5+Math.floor(Math.random()*3):3+Math.floor(Math.random()*2);return {goalsA,goalsB,winner,penalties:true,penA,penB};}return {goalsA,goalsB,winner:goalsA>goalsB?0:1,penalties:false};}
-function simulateNext(){let t=state.tournament,c=t.current;if(!c||c.done)return;$("simulateBtn").disabled=true;let result=simulateScore(c.a,c.b),winner=result.winner===0?c.a:c.b,loser=result.winner===0?c.b:c.a;c.done=true;c.result=result;c.winner=winner;let feed=[];feed.push(`<div class="match-event">⚽ <b>Apito inicial!</b> ${c.a.name} enfrenta ${c.b.name} em jogo único.</div>`);feed.push(`<div class="match-event">${result.goalsA>0?`🔥 ${c.a.name} marcou ${result.goalsA} gol(s).`:`🧤 ${c.a.name} não conseguiu marcar.`}</div>`);feed.push(`<div class="match-event">${result.goalsB>0?`⚡ ${c.b.name} marcou ${result.goalsB} gol(s).`:`🛡️ ${c.b.name} segurou o ataque adversário.`}</div>`);let score=`${result.goalsA} × ${result.goalsB}`;if(result.penalties){score+=` (${result.penA} × ${result.penB} nos pênaltis)`;feed.push(`<div class="match-event">🥅 Empate no tempo normal! ${winner.name} vence nos pênaltis.</div>`);}else{feed.push(`<div class="match-event">🏁 Fim de jogo! ${winner.name} avança para a próxima fase.</div>`);}$("score").textContent=score;$("scoreBig").textContent=`${result.goalsA} : ${result.goalsB}`;$("matchStatus").textContent=winner.isUser?"Classificado!":"Eliminado";$("matchFeed").innerHTML=feed.join("")+`<div class="match-event goal"><b>${winner.name.toUpperCase()} CLASSIFICADO</b></div>`;let winners=[];for(let i=0;i<t.rounds[t.round].length;i+=2){let x=t.rounds[t.round][i],y=t.rounds[t.round][i+1];if(i===c.pairIndex*2){winners.push(winner);continue;}let r=simulateScore(x,y);winners.push(r.winner===0?x:y);t.history.push({a:x.name,b:y.name,score:`${r.goalsA}-${r.goalsB}`,winner:r.winner===0?x.name:y.name});}t.rounds[t.round+1]=winners;$("simulateBtn").classList.add("hidden");if(t.round===3){declareChampion(winners[0]);}else{$("nextRoundBtn").classList.remove("hidden");}}
+function playerRole(p,team){
+ if(team.isUser && Number.isInteger(p.slot) && formations[state.formation]?.[p.slot]) return formations[state.formation][p.slot][0];
+ return p.pos;
+}
+function pickScorer(team){
+ const players=team.players||[];
+ const attacking=players.filter(p=>["CA","PE","PD","MEI"].includes(playerRole(p,team)));
+ const midfield=players.filter(p=>["MC","VOL"].includes(playerRole(p,team)));
+ const pool=[...attacking,...attacking,...midfield,...players];
+ return pool[Math.floor(Math.random()*Math.max(1,pool.length))]||players[0]||{name:team.name,pos:"CA"};
+}
+function buildTimeline(c){
+ const result=simulateScore(c.a,c.b), events=[{minute:1,html:`<b>Apito inicial!</b> A bola está rolando: ${c.a.name} x ${c.b.name}.`}];
+ const goalEvents=[];
+ function addGoals(team,amount,side){
+  for(let i=0;i<amount;i++){
+   const scorer=pickScorer(team), teammates=(team.players||[]).filter(p=>p.name!==scorer.name && playerRole(p,team)!=="GOL");
+   const canAssist=teammates.length>0 && Math.random()<.76;
+   const assist=canAssist?teammates[Math.floor(Math.random()*teammates.length)]:null;
+   const minute=8+Math.floor(Math.random()*82);
+   goalEvents.push({minute,side,scorer,assist,html:`<span class="goal"><b>⚽ GOOOOOL!</b> ${scorer.name}${assist?` recebe o passe de ${assist.name} e`:''} balança a rede! ${team.name}.`});
+  }
+ }
+ addGoals(c.a,result.goalsA,0); addGoals(c.b,result.goalsB,1);
+ events.push({minute:15+Math.floor(Math.random()*10),html:`${c.a.name} tenta acelerar a saída; ${c.b.name} fecha os espaços no meio.`});
+ events.push(...goalEvents);
+ events.push({minute:45,html:`<b>Intervalo!</b> Os times vão para o vestiário. O placar parcial é ${goalEvents.filter(e=>e.minute<=45&&e.side===0).length}–${goalEvents.filter(e=>e.minute<=45&&e.side===1).length}.`});
+ events.push({minute:58,html:`O segundo tempo começa! As equipes voltam com intensidade em busca do resultado.`});
+ events.push({minute:72,html:`Reta final de jogo: substituições, pressão e tensão nas arquibancadas.`});
+ events.push({minute:90,html:`<b>Apito final!</b> Termina o tempo regulamentar.`});
+ events.sort((a,b)=>a.minute-b.minute);
+ // Keep kickoff first and full-time last regardless of generated minute collisions.
+ events.unshift(events.splice(events.findIndex(e=>e.html.includes("Apito inicial")),1)[0]);
+ const full=events.findIndex(e=>e.html.includes("Apito final")); if(full>=0) events.push(events.splice(full,1)[0]);
+ return {result,events};
+}
+function playerStatKey(team,p){return `${team.name}::${p.name}`;}
+function statFor(team,p){const key=playerStatKey(team,p);return state.tournament.playerStats[key]||(state.tournament.playerStats[key]={name:p.name,teamName:team.name,goals:0,assists:0,appearances:0,score:6.2+((p.ovr||80)-80)*.035});}
+function recordAppearances(team){(team.players||[]).forEach(p=>{const s=statFor(team,p);s.appearances++;s.score+=.18;});}
+function recordContribution(team,ev){
+ if(!ev.scorer)return;
+ const s=statFor(team,ev.scorer);s.goals++;s.score+=1.15;
+ if(ev.assist){const a=statFor(team,ev.assist);a.assists++;a.score+=.75;}
+}
+function recordAutoMatch(a,b,result){
+ recordAppearances(a);recordAppearances(b);
+ [[a,result.goalsA],[b,result.goalsB]].forEach(([team,count])=>{
+  for(let i=0;i<count;i++){
+   const scorer=pickScorer(team),mates=(team.players||[]).filter(p=>p.name!==scorer.name&&playerRole(p,team)!=="GOL");
+   const assist=mates.length&&Math.random()<.76?mates[Math.floor(Math.random()*mates.length)]:null;
+   recordContribution(team,{scorer,assist});
+  }
+ });
+}
+function finishLiveMatch(c){
+ const t=state.tournament,result=c.result,winner=result.winner===0?c.a:c.b;
+ c.done=true;c.winner=winner;
+ if(result.penalties){c.feed.push(`<div class="match-event"><span class="minute">PÊN.</span> 🥅 Empate! ${winner.name} vence nas cobranças (${result.penA} × ${result.penB}).</div>`);}
+ c.feed.push(`<div class="match-event"><span class="minute">FIM</span> 🏁 <b>${winner.name} está classificado!</b></div>`);
+ $("score").textContent=`${result.goalsA} × ${result.goalsB}${result.penalties?` (${result.penA} × ${result.penB} pen.)`:""}`;
+ $("scoreBig").textContent=`${result.goalsA} : ${result.goalsB}`;
+ $("matchStatus").textContent=winner.isUser?"Classificado!":"Eliminado";
+ $("matchFeed").innerHTML=c.feed.join("");
+ let winners=[];
+ for(let i=0;i<t.rounds[t.round].length;i+=2){
+  let x=t.rounds[t.round][i],y=t.rounds[t.round][i+1];
+  if(i===c.pairIndex*2){winners.push(winner);continue;}
+  let r=simulateScore(x,y);recordAutoMatch(x,y,r);winners.push(r.winner===0?x:y);
+  t.history.push({a:x.name,b:y.name,score:`${r.goalsA}-${r.goalsB}`,winner:r.winner===0?x.name:y.name});
+ }
+ t.rounds[t.round+1]=winners;
+ $("simulateBtn").classList.add("hidden");
+ if(t.round===3){declareChampion(winners[0]);}else{$("nextRoundBtn").classList.remove("hidden");}
+}
+function simulateNext(){
+ const t=state.tournament,c=t.current;if(!c||c.done)return;
+ if(!c.timeline){
+  const built=buildTimeline(c);c.result=built.result;c.timeline=built.events;
+  c.feed=[];c.liveA=0;c.liveB=0;
+  recordAppearances(c.a);recordAppearances(c.b);
+  $("simulateBtn").textContent="Próximo lance →";
+  $("matchStatus").textContent="Em andamento";
+  $("matchFeed").innerHTML="<b>O árbitro autorizou!</b> Acompanhe a partida lance a lance.";
+ }
+ if(c.eventIndex<c.timeline.length){
+  const ev=c.timeline[c.eventIndex++];
+  if(ev.scorer){if(ev.side===0)c.liveA++;else c.liveB++;recordContribution(ev.side===0?c.a:c.b,ev);}
+  const minuteLabel=ev.minute===90?"90′":`${ev.minute}′`;
+  c.feed.push(`<div class="match-event"><span class="minute">${minuteLabel}</span> ${ev.html}</div>`);
+  $("score").textContent=`${c.liveA} × ${c.liveB}`;
+  $("scoreBig").textContent=`${c.liveA} : ${c.liveB}`;
+  $("matchFeed").innerHTML=c.feed.join("");
+  if(c.eventIndex>=c.timeline.length){finishLiveMatch(c);return;}
+  return;
+ }
+ finishLiveMatch(c);
+}
 function advanceRound(){let t=state.tournament;t.round++;prepareRound();}
-function declareChampion(champ){let t=state.tournament;t.champion=champ;$("tournamentRound").textContent="Campeão";$("tournamentSub").textContent="A competição chegou ao fim.";$("matchStatus").textContent="Encerrado";$("simulateBtn").classList.add("hidden");$("nextRoundBtn").classList.add("hidden");let best=[...state.roster].sort((a,b)=>b.ovr-a.ovr)[0];$("champion").classList.remove("hidden");$("champion").classList.add("champion-glow");$("champion").innerHTML=`🏆 <b>${champ.name} é o campeão da Glória Eterna!</b><br><span style="font-size:14px">${champ.isUser?"Você conquistou a América!":"O título escapou desta vez. Monte um novo elenco e tente novamente."}</span><br><span style="font-size:13px">⭐ Destaque do seu elenco: ${best.name} (${best.ovr})</span>`;$("phase").textContent="CAMPEÃO DEFINIDO";}
+function declareChampion(champ){let t=state.tournament;t.champion=champ;$("tournamentRound").textContent="Campeão";$("tournamentSub").textContent="A competição chegou ao fim.";$("matchStatus").textContent="Encerrado";$("simulateBtn").classList.add("hidden");$("nextRoundBtn").classList.add("hidden");const stats=Object.values(t.playerStats||{});const rei=stats.sort((a,b)=>(b.score+b.goals*.35+b.assists*.22)-(a.score+a.goals*.35+a.assists*.22))[0]||{name:"A definir",teamName:"Torneio",goals:0,assists:0};const rs=rei;$("champion").classList.remove("hidden");$("champion").classList.add("champion-glow");$("champion").innerHTML=`<div class="award-card"><div class="crown">👑</div><div style="color:var(--gold);font-weight:900;letter-spacing:2px">REI DA AMÉRICA</div><div style="font-size:25px;font-weight:900;margin:5px 0">${rei.name}</div><div style="font-size:13px">${rei.teamName}</div><div style="margin-top:8px">⚽ ${rs.goals} gols &nbsp; 🎯 ${rs.assists} assistências</div><div style="font-size:12px;color:#c7d7e8;margin-top:5px">Prêmio individual calculado pelo desempenho no torneio.</div></div><div style="margin-top:14px">🏆 <b>${champ.name} é o campeão da Glória Eterna!</b><br><span style="font-size:14px">${champ.isUser?"Você conquistou a América!":"O título escapou desta vez. Monte um novo elenco e tente novamente."}</span></div>`;$("phase").textContent="CAMPEÃO DEFINIDO";}
 function resetGame(){location.reload();}
 init();
 </script></body></html>
